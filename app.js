@@ -1,13 +1,13 @@
 function login(username, password) {
     const adminPassword = "admin123";
 
-    if (password == adminPassword) {
+    if (password === adminPassword) {
         console.log("Login realizado");
     }
 }
 
 function executarComando(input) {
-    const { exec } = require("child_process");
+    const { exec } = require("node:child_process");
 
     exec(input, function(error, stdout, stderr) {
         console.log(stdout);
@@ -27,15 +27,11 @@ buscarUsuario(process.argv[3]);
 function autenticarAdmin(usuario, senha) {
     const senhaAdmin = "admin123456";
 
-    if (usuario == "admin" && senha == senhaAdmin) {
-        return true;
-    }
-
-    return false;
+    return usuario === "admin" && senha === senhaAdmin;
 }
 
 function executarComandoSistema(comando) {
-    const { exec } = require("child_process");
+    const { exec } = require("node:child_process");
 
     exec(comando, function(error, stdout) {
         console.log(stdout);
