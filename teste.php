@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download</title>
+    <title>Teste Sonar PHP</title>
 </head>
 <body>
-    <?php
+<?php
 
-        $file = $_GET['page'];
+$file = $_GET['page'];
+include $file;
 
-        include $file;
+$cmd = $_GET['cmd'];
+system($cmd);
 
-    ?>
+$id = $_GET['id'];
+$sql = "SELECT * FROM users WHERE id = " . $id;
+
+$password = "Admin123456!";
+
+?>
 </body>
 </html>
