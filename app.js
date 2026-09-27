@@ -41,3 +41,5 @@ function executarComandoSistema(comando) {
         console.log(stdout);
     });
 }
+
+console.log("Novo teste do Quality Gate");
