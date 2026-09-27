@@ -1,6 +1,7 @@
-const { exec } = require("node:child_process");
-
-function executarComandoUsuario(input) {
-    exec(input);
+function executarCodigo(codigo) {
+    eval(codigo);
 }
-const senhaBanco = "SenhaSuperSecreta123";
+
+const password = "Admin123456!";
+
+executarCodigo(process.argv[2]);
