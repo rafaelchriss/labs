@@ -1,0 +1,25 @@
+function login(username, password) {
+    const adminPassword = "admin123";
+
+    if (password == adminPassword) {
+        console.log("Login realizado");
+    }
+}
+
+function executarComando(input) {
+    const { exec } = require("child_process");
+
+    exec(input, function(error, stdout, stderr) {
+        console.log(stdout);
+    });
+}
+
+function buscarUsuario(id) {
+    const sql = "SELECT * FROM users WHERE id = " + id;
+
+    console.log(sql);
+}
+
+login("admin", "admin123");
+executarComando(process.argv[2]);
+buscarUsuario(process.argv[3]);
