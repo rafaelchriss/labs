@@ -9,6 +9,18 @@ pipeline {
             }
         }
 
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
+        stage('Tests') {
+            steps {
+                sh 'npm test'
+            }
+        }
+
         stage('SonarQube Analysis') {
             steps {
                 script {

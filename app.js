@@ -3,26 +3,16 @@ function login(username, password) {
 
     if (password === adminPassword) {
         console.log("Login realizado");
+        return true;
     }
-}
 
-function executarComando(input) {
-    const { exec } = require("node:child_process");
-
-    exec(input, function(error, stdout, stderr) {
-        console.log(stdout);
-    });
+    return false;
 }
 
 function buscarUsuario(id) {
     const sql = "SELECT * FROM users WHERE id = " + id;
-
-    console.log(sql);
+    return sql;
 }
-
-login("admin", "admin123");
-executarComando(process.argv[2]);
-buscarUsuario(process.argv[3]);
 
 function autenticarAdmin(usuario, senha) {
     const senhaAdmin = "admin123456";
@@ -30,12 +20,8 @@ function autenticarAdmin(usuario, senha) {
     return usuario === "admin" && senha === senhaAdmin;
 }
 
-function executarComandoSistema(comando) {
-    const { exec } = require("node:child_process");
-
-    exec(comando, function(error, stdout) {
-        console.log(stdout);
-    });
-}
-
-console.log("Novo teste do Quality Gate");
+module.exports = {
+    login,
+    buscarUsuario,
+    autenticarAdmin
+};

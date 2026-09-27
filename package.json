@@ -1,0 +1,23 @@
+{
+  "name": "projeto-sonar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelchriss/labs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelchriss/labs/issues"
+  },
+  "homepage": "https://github.com/rafaelchriss/labs#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
